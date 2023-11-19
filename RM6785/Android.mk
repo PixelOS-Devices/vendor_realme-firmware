@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),RM6785)
+ifneq ($(filter RMX2001L1 RMX2151L1 RM6785,$(TARGET_DEVICE)),)
 $(foreach f, $(notdir $(wildcard $(LOCAL_PATH)/*)), \
     $(call add-radio-file,$(f)))
 
